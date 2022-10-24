@@ -16,7 +16,7 @@ export class ProductController {
   @Post('/create')
   @HttpCode(201)
   @UsePipes(ValidationPipe)
-  createProduct(@Body() createProductDto: CreateProductDto) {
-    return createProductDto.name;
+  async createProduct(@Body() createProductDto: CreateProductDto) {
+    return await this.productService.createNewProduct(createProductDto);
   }
 }

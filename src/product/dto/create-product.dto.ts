@@ -1,43 +1,43 @@
-import {
-  IsBoolean,
-  IsInt,
-  IsNotEmpty,
-  IsString,
-  Length,
-} from 'class-validator';
+import { IsArray, IsInt, IsNotEmpty, IsString, Length } from 'class-validator';
 
 export class CreateProductDto {
+  producId: string;
+
   @IsNotEmpty()
   @Length(3, 255)
   name: string;
 
   @IsString()
-  category: string;
+  @IsNotEmpty()
+  categoryID: string;
 
   @IsInt()
+  @IsNotEmpty()
   price: number;
 
-  @IsInt()
   promo_price: number;
 
-  @IsBoolean()
   in_stock: boolean;
 
   @IsString()
+  @IsNotEmpty()
   description: string;
 
-  @IsString()
+  @IsArray()
+  @IsNotEmpty()
   features: string[];
 
   @IsString()
+  @IsNotEmpty()
   image: string;
 
-  @IsString()
   overview: string;
 
-  @IsString()
   additional_info: string;
 
-  @IsInt()
-  review_id: number;
+  reviewID: string;
+
+  createdDate: string;
+
+  updatedDate: string;
 }

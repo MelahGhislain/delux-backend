@@ -8,5 +8,5 @@ export const typeormConfig: TypeOrmModuleOptions = {
   password: 'password',
   database: 'delux',
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-  synchronize: true,
+  synchronize: true, // set to false on production
 };
