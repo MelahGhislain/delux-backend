@@ -7,6 +7,7 @@ import { ReviewModule } from './review/review.module';
 import { CartModule } from './cart/cart.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeormConfig } from './config/typeorm.config';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { typeormConfig } from './config/typeorm.config';
     ReviewModule,
     CartModule,
     TypeOrmModule.forRoot(typeormConfig),
+    ConfigModule.forRoot(),
   ],
   controllers: [],
   providers: [],
